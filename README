@@ -1,0 +1,28 @@
+# Learning Spring
+
+This project is a simple Spring application created to learn and practice Spring framework concepts.
+
+## Description
+
+This repository contains a basic Spring application that demonstrates core Spring concepts and best practices. It serves as a learning tool for developers new to Spring or those looking to reinforce their understanding of Spring fundamentals.
+
+## Technologies Used
+
+- Java 17
+- Spring Boot 4.0.0
+- Maven 3.9.9
+
+## Features
+
+- Basic Spring Boot application structure
+- Dependency injection examples
+- RESTful API endpoints
+- Simple database integration with Data JDBC
+- Mapstruct
+- DAOs
+
+## Getting Started
+
+### Prerequisites
+
+Test
