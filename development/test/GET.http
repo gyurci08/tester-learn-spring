@@ -1,4 +1,4 @@
-### GET request to example server
-GET http://localhost:8888/api/book/1
+### GET request to protected endpoint
+GET http://localhost:8888/api/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJneXVyY2kwOCIsImV4cCI6MTczMzc2Njg3MSwiaWF0IjoxNzMzNzYzMjcxfQ.Ue7dj4M7h8BU4dyGdmUyiaCL6MUK-pQvdhbG7J8Kxa8
 
-###
