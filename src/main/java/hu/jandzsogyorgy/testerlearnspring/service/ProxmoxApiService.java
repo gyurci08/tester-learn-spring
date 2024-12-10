@@ -57,6 +57,7 @@ public class ProxmoxApiService {
         PveClient client = getPveClient();
         JSONObject response = client.getNodes().get("jgy-pvedev").getQemu().vmlist().getResponse();
         JSONArray array = response.getJSONArray("data");
+
         return array.toList().stream()
                 .map(obj -> jsonDtoMapper.jsonToDto(obj, VmDto.class))
                 .collect(Collectors.toList());
