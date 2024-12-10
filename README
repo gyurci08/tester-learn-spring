@@ -25,4 +25,5 @@ This repository contains a basic Spring application that demonstrates core Sprin
 
 ### Prerequisites
 
-Test
+ mvn install:install-file -Dfile='dependency/cv4pve-api-java-8.2.0.jar' -DgroupId='com.corsinvest' -DartifactId='cv4pve-api-java' -Dversion='8.2.0' -Dpackaging=jar
+ mvn install:install-file -Dfile='dependency/cv4pve-api-java-8.2.0.jar' -DgroupId='com.corsinvest' -DartifactId='cv4pve-api-java' -Dversion='8.2.0' -Dpackaging=jar -Dclassifier=sources

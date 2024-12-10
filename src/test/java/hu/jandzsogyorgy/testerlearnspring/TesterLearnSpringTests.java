@@ -1,4 +1,4 @@
-package hu.jandzsogyorgy.testjdbc;
+package hu.jandzsogyorgy.testerlearnspring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
