@@ -11,9 +11,6 @@ import java.util.Map;
 
 
 @Mapper(config = MappingConfig.class)
-public interface VmMapper extends GenericMapper<Vm, VmDto>,JsonMapper<Vm> {
-    @Override
-    default Class<Vm> getEntityClass() {
-        return Vm.class;
-    }
+public interface VmMapper extends GenericMapper<Vm, VmDto> {
+
 }

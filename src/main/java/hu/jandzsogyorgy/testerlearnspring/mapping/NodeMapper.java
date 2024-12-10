@@ -8,9 +8,6 @@ import org.mapstruct.Mapper;
 
 
 @Mapper(config = MappingConfig.class)
-public interface NodeMapper extends GenericMapper<Node, NodeDto>,JsonMapper<Node> {
-    @Override
-    default Class<Node> getEntityClass() {
-        return Node.class;
-    }
+public interface NodeMapper extends GenericMapper<Node, NodeDto> {
+
 }

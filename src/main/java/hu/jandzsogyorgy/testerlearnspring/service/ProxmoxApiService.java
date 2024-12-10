@@ -3,6 +3,7 @@ package hu.jandzsogyorgy.testerlearnspring.service;
 import hu.jandzsogyorgy.testerlearnspring.dto.VmDto;
 
 import hu.jandzsogyorgy.testerlearnspring.entity.Vm;
+import hu.jandzsogyorgy.testerlearnspring.mapping.JsonDtoMapper;
 import hu.jandzsogyorgy.testerlearnspring.mapping.VmMapper;
 import it.corsinvest.proxmoxve.api.PveClient;
 import it.corsinvest.proxmoxve.api.PveExceptionAuthentication;
@@ -11,12 +12,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -32,6 +30,7 @@ public class ProxmoxApiService {
     @Value("${proxmox.password}")
     private String password;
 
+    private final JsonDtoMapper jsonDtoMapper;
     private final VmMapper vmMapper;
 
 
@@ -54,18 +53,14 @@ public class ProxmoxApiService {
     }
 
 
-    public List<VmDto> listAllVm(){
+    public List<VmDto> listAllVm() {
         PveClient client = getPveClient();
-
-        //https://10.3.2.11:8006/api2/json/nodes/jgy-pvedev/qemu
         JSONObject response = client.getNodes().get("jgy-pvedev").getQemu().vmlist().getResponse();
         JSONArray array = response.getJSONArray("data");
-        List<Vm> vmList = array.toList().stream()
-                .map(vmMapper::jsonToEntity)
+        return array.toList().stream()
+                .map(obj -> jsonDtoMapper.jsonToDto(obj, VmDto.class))
                 .collect(Collectors.toList());
-
-
-        return vmMapper.toDto(vmList);
-
     }
+
+
 }
