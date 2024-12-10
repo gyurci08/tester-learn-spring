@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>hu.jandzsogyorgy</groupId>
-    <artifactId>test-jdbc</artifactId>
+    <artifactId>tester-learn-spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>test-jdbc</name>
-    <description>test-jdbc</description>
+    <name>tester-learn-spring</name>
+    <description>tester-learn-spring</description>
     <url/>
     <licenses>
         <license/>
