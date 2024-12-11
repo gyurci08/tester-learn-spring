@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ProxmoxApiService {
+public class ProxmoxService {
     private final PveClient client;
 
     private final JsonDtoMapper jsonDtoMapper;
