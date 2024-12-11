@@ -18,11 +18,13 @@ public class NodeController {
 
     @GetMapping
     public List<NodeDto> getNodes() {
+        log.info("api-call: getNodes");
         return nodeService.listAllNode();
     }
 
     @GetMapping("/{node}")
     public NodeDto getNode(@PathVariable String node) {
+        log.info("api-call: getNode");
         return nodeService.getNode(node);
     }
 }
